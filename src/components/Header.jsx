@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import mainLogo from "/public/assets/logo-dark.png";
+import mainLogo from "/public/assets/logo-dark.svg";
 
 const Header = () => {
   let currentRoute = usePathname();
@@ -66,7 +66,7 @@ const Header = () => {
             <a className="">
               <Image
                 height={50}
-                width={50}
+                width={120}
                 src={mainLogo}
                 alt="Picture of the author"
                 priority
