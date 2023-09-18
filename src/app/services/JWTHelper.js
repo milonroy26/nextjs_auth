@@ -1,4 +1,4 @@
-import { SignJWT, jwtVerify } from "jose";
+const { SignJWT, jwtVerify } = require("jose");
 
 export async function createToken(email) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
@@ -12,10 +12,8 @@ export async function createToken(email) {
   return token;
 }
 
-// verify Token
-
 export async function verifyToken(token) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-  const verified = await new jwtVerify(token, secret);
+  let decoded = await jwtVerify(token, secret);
   return decoded["payload"];
 }
