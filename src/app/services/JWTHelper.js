@@ -1,4 +1,4 @@
-const { SignJWT, jwtVerify } = require("jose");
+const { SignJWT, jwtVerify } = "jose";
 
 export async function createToken(email) {
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
